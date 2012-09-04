@@ -1,0 +1,59 @@
+#startup pygame
+import pygame
+pygame.init()
+
+#Define numbers, colors, ect.
+pi=3.141592653
+black =[0,0,0]
+white = [255,255,255]
+blue = [0,0,255]
+green = [0,255,0]
+red = [255,0,0]
+#size of screen
+size=[400,400]
+
+#Define images
+player_image = pygame.image.load("player.png").convert()
+dirt_image = pygame.image.load("dirt.png").convert()
+sky_image = pygame.image.load("player.png").convert()
+
+#open a screen
+screen=pygame.display.set_mode(size)
+pygame.display.set_caption("Max's Pygame Playground")
+
+#loop until user closes program
+done = False
+
+#create a timer for screen updating
+clock = pygame.time.Clock()
+
+
+#--------------------Main Program Loop-------------------------------
+while done == False:
+    #keep ref. rate at 10 fps
+    clock.tick(50)
+
+    for event in pygame.event.get():#user did something
+        if event.type == pygame.QUIT: #If user clicked close
+            done=True #Flags that we can end loop
+
+    
+    #All drawing code happens after the for loop and inside the
+    #main while done==False loop
+                
+    #clear screen and set BG
+    screen.fill(white)
+
+
+    
+
+
+
+
+    #update screen
+    pygame.display.flip()
+
+
+
+#be IDLE friendly
+pygame.quit ()
